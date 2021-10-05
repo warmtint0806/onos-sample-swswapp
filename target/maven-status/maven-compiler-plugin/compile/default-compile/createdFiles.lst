@@ -1,0 +1,6 @@
+org/seongsu/swswapp/AppWebApplication.class
+org/seongsu/swswapp/AppComponent.class
+org/seongsu/swswapp/SomeInterface.class
+org/seongsu/swswapp/AppWebResource.class
+org/seongsu/swswapp/AppCommand.class
+org/seongsu/swswapp/ApiDocRegistrator.class
