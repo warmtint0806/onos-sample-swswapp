@@ -1,4 +1,6 @@
-This project will serve as a step-by-step onos-p4 development tutorial. 
+# Switching Switch App dev tutorial
+
+This project will serve as a step-by-step onos-p4 development tutorial extended from the template app tutorial provided in the official onos wiki. 
 Hopefully, I'd like to summarize the basic how-to with sufficient relevant details required to make an p4/app such as 
 
 0) how to setup an onos dev environment
