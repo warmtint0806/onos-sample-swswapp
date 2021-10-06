@@ -11,4 +11,5 @@ Hopefully, I'd like to summarize the basic how-to with sufficient relevant detai
 not all the elements in this list are implemented yet (implemented ones will be marked with *) 
 and this list itself is neither completed 
 
-doc: https://docs.google.com/presentation/d/1DLbKL4neKNp9npt8wYU-mJacnuU7DHht48CqIBFH34g/edit?usp=sharing
+[doc]
+https://docs.google.com/presentation/d/1DLbKL4neKNp9npt8wYU-mJacnuU7DHht48CqIBFH34g/edit?usp=sharing
