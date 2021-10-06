@@ -26,3 +26,4 @@ public class swswappDeviceCheckCommand extends AbstractShellCommand {
     }
 
 }
+
