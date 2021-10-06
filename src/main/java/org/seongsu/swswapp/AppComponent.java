@@ -16,6 +16,10 @@
 package org.seongsu.swswapp;
 
 import org.onosproject.cfg.ComponentConfigService;
+import org.onosproject.net.DeviceId;
+import org.onosproject.net.config.ConfigFactory;
+import org.onosproject.net.config.NetworkConfigRegistry;
+import org.onosproject.net.config.basics.SubjectFactories;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -23,6 +27,7 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.seongsu.swswapp.config.swswDeviceConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,9 +54,25 @@ public class AppComponent implements SomeInterface {
     @Reference(cardinality = ReferenceCardinality.MANDATORY)
     protected ComponentConfigService cfgService;
 
+    /** custom netcfg setup **/
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY)
+    protected NetworkConfigRegistry configRegistry;
+
+    private final ConfigFactory<DeviceId, swswDeviceConfig> swswDeviceConfigFactory =
+            new ConfigFactory<DeviceId, swswDeviceConfig>(
+                    SubjectFactories.DEVICE_SUBJECT_FACTORY, swswDeviceConfig.class, swswDeviceConfig.CONFIG_KEY) {
+                @Override
+                public swswDeviceConfig createConfig() {
+                    return new swswDeviceConfig();
+                }
+            };
+
+
     @Activate
     protected void activate() {
         cfgService.registerProperties(getClass());
+        configRegistry.registerConfigFactory(swswDeviceConfigFactory);
         log.info("Started");
     }
 
